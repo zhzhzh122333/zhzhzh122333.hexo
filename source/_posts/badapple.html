@@ -1,0 +1,39 @@
+---
+title: Bad Apple
+date: 2017-01-12
+categories: Game
+tags: Fun
+description: Use characters to play a video
+---
+<!DOCTYPE html>
+<style>
+	pre {
+		font-size: 0.5em;
+		font-family:'Lucida Console', Monaco, monospace;
+	}
+</style>
+<body>
+	<pre id="container"></pre>
+</body>
+<script src="/scripts/jquery-1.11.3.min.js"></script>
+<script>
+	var currentIndex = 0;
+	var container = document.getElementById("container");
+	function play() {
+		//if (currentIndex > badapple.length) currentIndex = 0;
+		//container.innerHTML = badapple[currentIndex++];
+		//setTimeout("play()", 100);
+	}
+	function getData() {
+		$.ajax({
+			type: 'post',
+			dataType: 'json',
+			url: '/scripts/badapple/badapple-part0.json',
+			success: function(json) {
+				console.log(1);
+			}
+		});
+	}
+	getData();
+	//play();
+</script>

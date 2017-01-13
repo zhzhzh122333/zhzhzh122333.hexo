@@ -1,0 +1,59 @@
+---
+title: Running
+date: 2016-07-21
+categories: Game
+tags: Fun
+description: Run for your life
+---
+<!DOCTYPE html>
+<body onload="run()">
+    <div id="runBox"></div>
+    <div id="runBottom"></div>
+</body>
+<script>
+    var n = 100;
+    var delayTime = 50;
+    var word = "run";
+    var isRunning = true;
+    var currentRun = 0;
+    var totalRun = 1000;
+    var runModel = "g";
+    var blank = getBlank();
+    var runBox = document.getElementById("runBox");
+    var runBottom = document.getElementById("runBottom");
+    
+    function getBlank() {
+        var blank = [];
+        blank[0] = "";
+        for (var i = 1; i <= n; i++) {
+            blank[i] = blank[i-1] + "&nbsp;";
+        }
+        return blank;
+    }
+    
+    function start() {
+        isRunning = true;
+        run();
+    }
+    
+    function pause() {
+        isRunning = false;
+    }
+    
+    function run() {
+        var i = currentRun++;
+        //runBox.insertAfter(blank[i%n > n/2 ? n-i%n : i%n] + word + "<br>");
+        var label = document.createElement("label");
+        if (runModel == "s") {
+            label.innerHTML = blank[i/n%2 >= 1 ? n-i%n : i%n] + word + "<br>";
+        } else if (runModel == "g") {
+            var j = Math.sqrt(n);
+            label.innerHTML = blank[i/j%2 >= 1 ? n-Math.pow(i%j,2) : n-Math.pow(j-i%j,2)] + word + "<br>";
+        }
+        runBox.appendChild(label);
+        runBottom.scrollIntoView(false);
+        if (isRunning && currentRun <= totalRun) {
+            setTimeout("run()", delayTime);
+        }
+    }
+</script>

@@ -7,33 +7,62 @@ description: Use characters to play a video
 ---
 <!DOCTYPE html>
 <style>
-	pre {
+	#container {
+		background: #fff;
+		color: #555;
 		font-size: 0.5em;
 		font-family:'Lucida Console', Monaco, monospace;
+		height: 400px;
+		line-height: initial;
+		text-align: center;
 	}
 </style>
 <body>
 	<pre id="container"></pre>
 </body>
-<script src="/scripts/jquery-1.11.3.min.js"></script>
+<script src="/scripts/jquery-1.11.1.min.js"></script>
 <script>
 	var currentIndex = 0;
+	var badApple = [];
+	var dataList = ['badapple-part0.json', 'badapple-part1.json', 'badapple-part2.json',
+		'badapple-part3.json', 'badapple-part4.json', 'badapple-part5.json', 'badapple-part6.json',
+		'badapple-part7.json', 'badapple-part8.json', 'badapple-part9.json', 'badapple-part10.json'];
 	var container = document.getElementById("container");
+
 	function play() {
-		//if (currentIndex > badapple.length) currentIndex = 0;
-		//container.innerHTML = badapple[currentIndex++];
-		//setTimeout("play()", 100);
+		if (badApple.length > 0) {
+			if (currentIndex > badApple.length) currentIndex = 0;
+			container.innerHTML = badApple[currentIndex++];
+		}
+		setTimeout("play()", 100);
+		console.log(badApple.length);
 	}
-	function getData() {
-		$.ajax({
-			type: 'post',
-			dataType: 'json',
-			url: '/scripts/badapple/badapple-part0.json',
-			success: function(json) {
-				console.log(1);
+
+	function getData(i) {
+		jQuery.ajax({
+			type: 'get',
+			dataType: 'text',
+			async: true,
+			url: '/scripts/badapple/' + dataList[i],
+			success: function(data) {
+				var json = parseJSON(data);
+				badApple.push.apply(badApple, json);
+
+				if (i+1 < dataList.length) {
+					getData(i+1);
+				}
 			}
 		});
 	}
-	getData();
-	//play();
+
+	function parseJSON(string) {
+		try {
+			return eval('(' + string + ')');
+		} catch (e) {
+			throw new SyntaxError("解析JSON字符串出错");
+		}
+	}
+
+	getData(0);
+	play();
 </script>

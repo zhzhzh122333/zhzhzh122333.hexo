@@ -1,9 +1,9 @@
 ---
-title: Dodgeball
+title: Particles
 date: 2017-01-09
 categories: Game
 tags: Fun
-description: Let's play a bodgeball game!
+description: A beautiful javascript plugin
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -12,12 +12,13 @@ description: Let's play a bodgeball game!
   <title>Title</title>
 </head>
 <style>
-  .container {
+  .particles-container {
     background-color: #ec3eff;
+    height: 350px;
   }
 </style>
 <body>
-<div class="container">
+<div class="particles-container">
   <select id="style-select">
     <option value="1">style 1</option>
     <option value="2">style 2</option>
@@ -25,8 +26,8 @@ description: Let's play a bodgeball game!
   <div id="particles-js"></div>
 </div>
 </body>
-<script src="/scripts/jquery-1.11.3.min.js"></script>
-<script src="/scripts/particles/particles.js"></script>
+<script src="/scripts/jquery-1.11.1.min.js"></script>
+<script src="/scripts/particles/particles.min.js"></script>
 <script>
   var particlesJson = {
     'default': {

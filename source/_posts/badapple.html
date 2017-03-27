@@ -7,7 +7,7 @@ description: Use characters to play a video
 ---
 <!DOCTYPE html>
 <style>
-	#container {
+	#video-container {
 		background: #fff;
 		color: #555;
 		font-size: 0.5em;
@@ -18,7 +18,7 @@ description: Use characters to play a video
 	}
 </style>
 <body>
-	<pre id="container"></pre>
+	<pre id="video-container"><br><br><br><br><br>Loading...</pre>
 </body>
 <script src="/scripts/jquery-1.11.1.min.js"></script>
 <script>
@@ -27,11 +27,11 @@ description: Use characters to play a video
 	var dataList = ['badapple-part0.json', 'badapple-part1.json', 'badapple-part2.json',
 		'badapple-part3.json', 'badapple-part4.json', 'badapple-part5.json', 'badapple-part6.json',
 		'badapple-part7.json', 'badapple-part8.json', 'badapple-part9.json', 'badapple-part10.json'];
-	var container = document.getElementById("container");
+	var container = document.getElementById("video-container");
 
 	function play() {
 		if (badApple.length > 0) {
-			if (currentIndex > badApple.length) currentIndex = 0;
+			if (currentIndex >= badApple.length) currentIndex = 0;
 			container.innerHTML = badApple[currentIndex++];
 		}
 		setTimeout("play()", 100);
@@ -58,7 +58,7 @@ description: Use characters to play a video
 		try {
 			return eval('(' + string + ')');
 		} catch (e) {
-			throw new SyntaxError("解析JSON字符串出错");
+			throw new SyntaxError("parsing json string error");
 		}
 	}
 

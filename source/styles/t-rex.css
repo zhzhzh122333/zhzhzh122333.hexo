@@ -37,7 +37,6 @@ html,body{
 }
 
 .offline .runner-container {
-  margin-top: 100px;
   height: 150px;
   max-width: 600px;
   overflow: hidden;

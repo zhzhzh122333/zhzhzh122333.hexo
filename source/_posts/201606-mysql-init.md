@@ -20,7 +20,7 @@ rm -f /usr/my.cnf
 rm -Rf /var/lib/mysql
 ```
 如图
-{% img /images/mysql-init/1.png 删除mysql %}
+{% img /images/201606/mysql-init-1.png 删除mysql %}
 
 <!-- more -->
 
@@ -32,7 +32,7 @@ tar -xvf MySQL-5.6.25-1.linux_glibc2.5.x86_64.rpm-bundle.tar -C ./mysql/
 cd mysql
 ```
 如图
-{% img /images/mysql-init/2.png 解压mysql安装包 %}
+{% img /images/201606/mysql-init-2.png 解压mysql安装包 %}
 
 
 ## 安装mysql
@@ -41,14 +41,14 @@ cd mysql
 rpm -ivh MySQL-server-5.6.25-1.linux_glibc2.5.x86_64.rpm
 ```
 如图
-{% img /images/mysql-init/3.png 安装mysql %}
+{% img /images/201606/mysql-init-3.png 安装mysql %}
 ```
 rpm -ivh MySQL-client-5.6.25-1.linux_glibc2.5.x86_64.rpm
 rpm -ivh MySQL-devel-5.6.25-1.linux_glibc2.5.x86_64.rpm
 rpm -ivh MySQL-shared-compat-5.6.25-1.linux_glibc2.5.x86_64.rpm
 ```
 如图
-{% img /images/mysql-init/4.png 安装mysql %}
+{% img /images/201606/mysql-init-4.png 安装mysql %}
 
 
 ## 修改mysql默认字符编码
@@ -60,7 +60,7 @@ default-character-set=utf8
 character-set-server=utf8
 ```
 如图
-{% img /images/mysql-init/5.png 安装mysql %}
+{% img /images/201606/mysql-init-5.png 安装mysql %}
 
 
 ## 初始化数据库
@@ -69,7 +69,7 @@ character-set-server=utf8
 /usr/bin/mysql_install_db
 ```
 如图
-{% img /images/mysql-init/6.png 初始化数据库 %}
+{% img /images/201606/mysql-init-6.png 初始化数据库 %}
 
 
 ## 运行mysql，并修改密码
@@ -84,7 +84,7 @@ mysql -uroot -pp6_lTG87T5z5nuTe
 set password = password('123456');
 ```
 如图
-{% img /images/mysql-init/7.png 运行并修改密码 %}
+{% img /images/201606/mysql-init-7.png 运行并修改密码 %}
 
 
 ## 设置允许远程登录
@@ -99,7 +99,7 @@ flush privileges;
 exit
 ```
 如图
-{% img /images/mysql-init/8.png 设置允许远程登录 %}
+{% img /images/201606/mysql-init-8.png 设置允许远程登录 %}
 
 
 ## 附录

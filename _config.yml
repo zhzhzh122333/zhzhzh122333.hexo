@@ -35,7 +35,7 @@ skip_render:
 	- 'ignore/**'
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :year:month-:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:

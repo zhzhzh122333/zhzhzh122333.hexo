@@ -40,7 +40,7 @@ description: Live2D 看板娘插件
 <script src="/scripts/live2d/assets/waifu-tips.min.js?v=1.4.2"></script>
 <script src="/scripts/live2d/assets/live2d.min.js?v=1.0.5"></script>
 <script type="text/javascript">
-    var modelId = new Date().getDay() % 6;
+    var modelId = new Date().getDay() % 6 + 1;
     /* 可直接修改部分参数 */
     live2d_settings['modelId'] = modelId;            // 默认模型 ID
     live2d_settings['modelTexturesId'] = 0;          // 默认材质 ID
@@ -56,7 +56,7 @@ description: Live2D 看板娘插件
     live2d_settings['waifuDraggable'] = 'axis-x';    // 拖拽样式
     live2d_settings['hitokotoAPI'] = 'hitokoto.cn';  // 一言 API
     /* 在 initModel 前添加 */
-    initModel("/scripts/live2d/assets/waifu-tips.json?v=1.4.2")
+    initModel("/scripts/live2d/assets/waifu-tips.json?v=1.4.2");
 </script>
 </body>
 </html>

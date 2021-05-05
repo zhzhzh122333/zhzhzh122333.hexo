@@ -9,7 +9,7 @@ description: Live2D 看板娘插件
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Live2D 看板娘</title>
-    <link rel="stylesheet" type="text/css" href="/scripts/live2d/assets/waifu.min.css?v=1.4.2"/>
+    <link rel="stylesheet" type="text/css" href="/assets/202003/live2d/assets/waifu.min.css?v=1.4.2"/>
 </head>
 <body>
 
@@ -37,8 +37,8 @@ description: Live2D 看板娘插件
 <script src="/scripts/jquery/jquery-ui.min.js"></script>
 
 <!-- Live2D -->
-<script src="/scripts/live2d/assets/waifu-tips.min.js?v=1.4.2"></script>
-<script src="/scripts/live2d/assets/live2d.min.js?v=1.0.5"></script>
+<script src="/assets/202003/live2d/assets/waifu-tips.min.js?v=1.4.2"></script>
+<script src="/assets/202003/live2d/assets/live2d.min.js?v=1.0.5"></script>
 <script type="text/javascript">
     var modelId = new Date().getDay() % 6 + 1;
     /* 可直接修改部分参数 */
@@ -56,7 +56,7 @@ description: Live2D 看板娘插件
     live2d_settings['waifuDraggable'] = 'axis-x';    // 拖拽样式
     live2d_settings['hitokotoAPI'] = 'hitokoto.cn';  // 一言 API
     /* 在 initModel 前添加 */
-    initModel("/scripts/live2d/assets/waifu-tips.json?v=1.4.2");
+    initModel("/assets/202003/live2d/assets/waifu-tips.json?v=1.4.2");
 </script>
 </body>
 </html>

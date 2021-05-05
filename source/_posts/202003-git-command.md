@@ -7,11 +7,11 @@ tags: [Git,Linux]
 
 >参考：https://www.jianshu.com/p/46ffff059092
 
-{% img /images/202003/git-command-1.jpg %}
+{% img /assets/202003/git-command/git-command-1.jpg %}
 
 <!-- more -->
 
-{% img /images/202003/git-command-2.jpg %}
+{% img /assets/202003/git-command/git-command-2.jpg %}
 
 ## 新建代码库
 ```

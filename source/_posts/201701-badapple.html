@@ -42,7 +42,7 @@ description: Use characters to play a video
 			type: 'get',
 			dataType: 'text',
 			async: true,
-			url: '/scripts/badapple/' + dataList[i],
+			url: '/assets/201701/badapple/' + dataList[i],
 			success: function(data) {
 				var json = parseJSON(data);
 				badApple.push.apply(badApple, json);
